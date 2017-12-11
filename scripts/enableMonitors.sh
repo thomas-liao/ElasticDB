@@ -30,7 +30,7 @@ do
 echo "enable dstats on $i"
 ssh root@$i "tar xzvf $TPCW_HOME/dstats.tar.gz -C $TPCW_HOME"
 #ssh root@$i "$TPCW_HOME/./dstat-0.7.3/dstat"
-osascript -e 'tell application "Terminal" to do script "echo '$i' && ssh root@'$i' \"'$TPCW_HOME'/./dstat-0.7.3/dstat --color 5 \""'
+gnome-terminal -x sh -c "echo '$i' && ssh root@'$i' \"'$TPCW_HOME'/./dstat-0.7.3/dstat --color 5 \"; bash"
 done
 
 
